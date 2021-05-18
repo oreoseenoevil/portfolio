@@ -1,0 +1,61 @@
+@import '../../Styles/base.scss';
+
+.menu {
+  background: $primary;
+  height: 100vh;
+  min-width: 300px;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-out;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.8rem;
+    letter-spacing: 1.3px;
+    font-weight: 300;
+    color: $secondary;
+    overflow: hidden;
+
+    li {
+      border-bottom: 1px solid #333;
+      margin-top: 5px;
+      opacity: 0;
+      transition: transform 500ms $cubic;
+      opacity: 600ms $cubic;
+      transform: scale(1.15) translateY(-30px);
+      transition: transform 500ms $cubic, opacity 600ms $cubic;
+
+      a {
+        text-decoration: none;
+        font-size: inherit;
+        color: inherit;
+        display: block;
+        font-weight: 100;
+        line-height: 2.35;
+        width: 100%;
+      }
+    }
+  }
+
+  &.active {
+    transition: all 300ms ease-in;
+    transition-delay: 250ms;
+    background: $accent;
+    right: 0;
+
+    ul {
+      li {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+      }
+    }
+  }
+}

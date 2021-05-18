@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap');
+
+$primary: #1e272e;
+$secondary: #fff;
+$accent: #000;
+$accent-001: #34e7e4;
+$accent-002: #00d8d6;
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+$menuItems: 5;
+
+$width: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
